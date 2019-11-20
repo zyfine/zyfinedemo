@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout= "http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+</head>
+<body>
+<form action="/testBoot/save" th:action="@{/testBoot/save}" method="post" th:object="${user}">
+    名字<br/>
+    <input type="text" name="username" >
+    <br/>
+    <input type="text" name="realname" >
+    <br/>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

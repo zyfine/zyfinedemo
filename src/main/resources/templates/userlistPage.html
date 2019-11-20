@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout= "http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <title>Content</title>
+</head>
+<body>
+<div>
+    <a href="/testBoot/form" th:href="@{/testBoot/form}">
+        新建用户
+    </a>
+</div>
+<table border="2">
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>名字</td>
+        <td>证件号码</td>
+        <td>管理</td>
+    </tr>
+    <tr th:each="user:${userlist}">
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.realname}"></td>
+
+        <td><a th:href="@{'/testBoot/getUser/'+${user.id}}" th:text="${user.id}"></a></td>
+        <td><a th:href="@{'/testBoot/delUser/'+${user.id}}">删除</a></td>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>
